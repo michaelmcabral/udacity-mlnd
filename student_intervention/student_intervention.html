@@ -14060,12 +14060,13 @@ Tuned model has a testing F1 score of 0.8481.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><font color=darkblue>
-**Answer:**<br><br>
-The final model's f1 score for training is **0.9754** and for testing is **0.8481**.<br>
+<strong>Answer:</strong><br><br>
+The final model's f1 score for training is <strong>0.9754</strong> and for testing is <strong>0.8481</strong>.<br>
 The final testing score is a little higher than the untuned model (that was 0.8462).<br><br>
-Three parameters were tested: **C**, **gamma** and the **kernel**.<br>
-The final model kept the default values for C and the kernel (*C=1* and *kernel=rbf*), but changed the gamma value from 1/300 (default value) to 0.1. The higher value for the gamma parameter means that each training point has a smaller area of influence when defining the boundary lines. This means that the points closer to the boundary have more relevance and can make it become more sinuous. This can lead to overfitting but, judging by the test performance, it didn't happen in this case. That's a point to check though with future datasets. Maybe it will be better to use the default value of gamma, that has almost the same performance with the total error more relative to bias instead of variance (probably a more robust performance).
-</font></p>
+Three parameters were tested: <strong>C</strong>, <strong>gamma</strong> and the <strong>kernel</strong>.<br>
+The final model kept the default values for C and the kernel (<em>C=1</em> and <em>kernel=rbf</em>), but <strong>changed the gamma value from 1/300 (default value) to 0.1</strong>. The higher value for the gamma parameter means that each training point has a smaller area of influence when defining the boundary lines. This means that the points closer to the boundary have more relevance and can make it become more sinuous. <strong>This can lead to overfitting and, judging by the large gap formed between training scores and test ones, that's what actually happened in our case</strong>.<br><br></p>
+<p><strong>I prefer to use the untuned model, with the default value of gamma</strong>, that has almost the same performance with a total error more relative to the hypothesis set bias instead of its variance. This means that it has a higher probability to generalize well in future datasets, in other words, a higher probability to keep similiar good performances.
+&lt;/font&gt;</p>
 
 </div>
 </div>
